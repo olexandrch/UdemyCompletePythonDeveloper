@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Sec.17 206 Images With Python/pikachu_blur.png
+Sec.17 206 Images With Python/pikachu_sharpen.png
+Sec.17 206 Images With Python/pikachu_smooth.png
+Sec.17 206 Images With Python/pikachu_grey.png
