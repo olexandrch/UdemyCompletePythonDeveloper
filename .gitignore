@@ -127,6 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# My ignore 
 Sec.17 206 Images With Python/pikachu_blur.png
 Sec.17 206 Images With Python/pikachu_sharpen.png
 Sec.17 206 Images With Python/pikachu_smooth.png
@@ -135,3 +137,5 @@ Sec.17 206 Images With Python/pikachu_crop.png
 Sec.17 206 Images With Python/pikachu_resize.png
 Sec.17 206 Images With Python/pikachu_rotate.png
 Sec.17 206 Images With Python/astro_thumbnail.jpg
+
+new/
