@@ -5,6 +5,7 @@
 
 # https://flask.palletsprojects.com/en/1.1.x/quickstart/
 
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 
 # We need to run:
 # $ source ./venv/bin/activate
