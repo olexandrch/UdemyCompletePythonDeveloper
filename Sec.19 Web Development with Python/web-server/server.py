@@ -5,7 +5,11 @@
 
 # https://flask.palletsprojects.com/en/1.1.x/quickstart/
 
-# https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types 
+# https://swapi.dev/   -  Star Wars API server
+# http://www.mashup-template.com/templates.html   - Free HTML templates
+# https://robohash.org/   - Robot generating API
+
 
 # We need to run:
 # $ source ./venv/bin/activate
@@ -26,7 +30,8 @@ def hello_world(username=None, post_id=None):
 def about():
     return render_template('about.html')
 
-@app.route('/blog')
+@app.route('/')
 def blog():
-    return 'This is my blog.'
+    return 'Try to type in your browser: "http://127.0.0.1:5000/alex/7" or "http://127.0.0.1:5000/about"'
+    
 

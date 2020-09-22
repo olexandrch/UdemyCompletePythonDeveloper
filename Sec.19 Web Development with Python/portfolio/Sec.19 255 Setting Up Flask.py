@@ -10,6 +10,12 @@
 
 # https://flask.palletsprojects.com/en/1.1.x/quickstart/
 
+# For the first time only, run the following:
+
+# Deactivate your current virtual environment and remove folder
+# $ deactivate
+# $ rm  -R ./venv
+
 # create a virtual environment
 # $ python3 -m venv venv
 
