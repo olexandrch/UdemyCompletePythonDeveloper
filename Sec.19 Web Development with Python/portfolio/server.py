@@ -18,8 +18,9 @@
 # $ export FLASK_ENV=development
 # $ flask run
  
-
-from flask import Flask, render_template
+import os
+import datetime
+from flask import Flask, render_template, request, send_from_directory, redirect
 
 app = Flask(__name__)
 
@@ -31,3 +32,33 @@ def my_home():
 @app.route('/<string:page_name>')
 def html_page(page_name):
     return render_template(page_name)
+
+
+# https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data
+
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    if request.method == 'POST':
+        data=request.form.to_dict()
+        write_to_file(data)
+        return redirect('/thankyou.html')
+    else:
+        return 'something went wrong'
+
+
+# https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'assets'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+def write_to_file(data):
+    """Write message to the database.txt"""
+    with open('database.txt', mode='a') as database:
+        date = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        email = data["email"]
+        subject = data["subject"]
+        message = data["message"]
+        database.write(f'{date},   {email},   {subject},   {message}\n')
