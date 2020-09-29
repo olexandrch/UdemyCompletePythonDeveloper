@@ -20,6 +20,7 @@
  
 import os
 import datetime
+import csv
 from flask import Flask, render_template, request, send_from_directory, redirect
 
 app = Flask(__name__)
@@ -40,7 +41,7 @@ def html_page(page_name):
 def submit_form():
     if request.method == 'POST':
         data=request.form.to_dict()
-        write_to_file(data)
+        write_to_csv(data)
         return redirect('/thankyou.html')
     else:
         return 'something went wrong'
@@ -62,3 +63,14 @@ def write_to_file(data):
         subject = data["subject"]
         message = data["message"]
         database.write(f'{date},   {email},   {subject},   {message}\n')
+
+def write_to_csv(data):
+    """Write message to the database.csv"""
+    with open('database.csv', mode='a') as database:
+        date = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        email = data["email"]
+        subject = data["subject"]
+        message = data["message"]
+        message_writer = csv.writer(database, delimiter=',',
+                 quotechar='"', quoting=csv.QUOTE_NONE) 
+        message_writer.writerow([date, email, subject, message])
