@@ -69,7 +69,7 @@ def write_to_file(data):
 
 def write_to_csv(data):
     """Write message to the database.csv"""
-    with open('database.csv', mode='a') as database:
+    with open('database.csv', newline='', mode='a') as database:
         date = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         email = data["email"]
         subject = data["subject"]
