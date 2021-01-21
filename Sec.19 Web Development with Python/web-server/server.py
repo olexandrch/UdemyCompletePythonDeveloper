@@ -11,7 +11,7 @@
 # https://robohash.org/   - Robot generating API
 
 
-# We need to run:
+# We need to run: 
 # $ source ./venv/bin/activate
 # $ export FLASK_APP=server.py
 # $ export FLASK_ENV=development
